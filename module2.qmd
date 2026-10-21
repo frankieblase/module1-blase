@@ -169,7 +169,8 @@ results <- passages |> left_join(model_labels, by = "id")
 
 How do you interpret these values? is 0.49 like they agree on \~half of
 the passages? so around 75% of the outputs from the models agreed with
-experts?
+experts? after running again, the correctness of the model improved to
+k=0.53
 
 Percentage agreement flatters: if most passages had no target, saying
 "no" every time would score well. **Cohen's kappa** corrects for
@@ -465,13 +466,16 @@ Write short answers with a partner, directly in this notebook:
     do climate laws set goals for nature? which countries' NDCs are
     conditional on finance?).
 
-    *Your answer:*
+    *Your answer: how has the year for environmental targets changes
+    within countries, do they move forward or back?*
 
 2.  **What the model would need to do.** Which labels or extracted
     values would it produce, and how would you turn them into an answer
     (counts by country, trends over time, ...)?
 
-    *Your answer:*
+    *Your answer: I would have the model extract the year that a target
+    references and the year that the target was proposed and the type of
+    target the text is referencing.*
 
 3.  **What you would check first.** Today you validated on 100 passages
     chosen for convenience. Before trusting results across the corpus,
